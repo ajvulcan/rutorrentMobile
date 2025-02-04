@@ -1154,6 +1154,21 @@ plugin.update = function(singleUpdate) {
         plugin.labelIds[labelProper] = nextLabelId++;
       }
 
+      // Buscar el registro que contiene l en su nombre
+  		let LabelSize = null;
+  		
+  		for (const key in theWebUI.labels) {
+  		    // Verificar si el valor de la clave contiene l
+  		    if (theWebUI.labels[key].includes(l)) {
+  		        // Extraer el tamaño (size) del registro correspondiente
+  		        const labelData = theWebUI.labels[key];
+  		        if (labelData.size !== undefined) {
+  		            LabelSize = labelData.size;
+  		            break; // Salir del bucle una vez encontrado
+  		        }
+  		    }
+  		}
+
       labelsHtml += '<li><a href="javascript://void();" onclick="mobile.filter(mobile.statusFilter.label, this, \'' + labelProper + '\');">' + labelProper + ' (' + theWebUI.labels[l].size + ')</a></li>';
     });
     $('#torrentsLabels ul').html(labelsHtml);
