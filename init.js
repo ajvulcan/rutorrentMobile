@@ -1154,12 +1154,12 @@ plugin.update = function(singleUpdate) {
         plugin.labelIds[labelProper] = nextLabelId++;
       }
 
+      // AJVULCAN FIX
       // Buscar el registro que contiene l en su nombre
-  		let LabelSize = null;
-  		
+      let LabelSize = null;
   		for (const key in theWebUI.labels) {
   		    // Verificar si el valor de la clave contiene l
-  		    if (theWebUI.labels[key].includes(l)) {
+  		    if (key.includes(l)) {
   		        // Extraer el tamaño (size) del registro correspondiente
   		        const labelData = theWebUI.labels[key];
   		        if (labelData.size !== undefined) {
