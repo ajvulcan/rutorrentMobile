@@ -1169,7 +1169,7 @@ plugin.update = function(singleUpdate) {
   		    }
   		}
 
-      labelsHtml += '<li><a href="javascript://void();" onclick="mobile.filter(mobile.statusFilter.label, this, \'' + labelProper + '\');">' + labelProper + ' (' + theWebUI.labels[l].size + ')</a></li>';
+      labelsHtml += '<li><a href="javascript://void();" onclick="mobile.filter(mobile.statusFilter.label, this, \'' + labelProper + '\');">' + labelProper + ' (' + LabelSize + ')</a></li>';
     });
     $('#torrentsLabels ul').html(labelsHtml);
     if ($('#torrentsLabels ul').is(':visible')) {
